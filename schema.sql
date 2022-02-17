@@ -12,6 +12,9 @@ CREATE TABLE animals (
 ALTER TABLE animals 
     ADD species VARCHAR;
 
+ALTER TABLE animals
+ADD PRIMARY KEY (ID);
+
 CREATE TABLE owners(
 	id SERIAL PRIMARY KEY,                    
 	full_name VARCHAR,   
