@@ -23,6 +23,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - GitHub: [@mwanawabangona](https://github.com/mwanawabangona/)
 - LinkedIn: [Ellis ngona](https://www.linkedin.com/in/lhttps:/www.linkedin.com/in/ellisngona/8/)
 
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

@@ -1,12 +1,12 @@
 CREATE DATABASE vet_clinic;
 
-CREATE TABLE animals (
-    id int NOT NULL IDENTITY(1,1),
+CREATE TABLE vet_clinic_table (
+    id SERIAL,
     name TEXT,
     date_of_birth DATE,
     escape_attempts INT,
     neutered BOOLEAN,
-    weight_kg DECIMAL,
+    weight_kg DECIMAL
 );
 
 ALTER TABLE animals 
@@ -56,3 +56,13 @@ CREATE TABLE visits(
 	vets_id INT,
     date_of_visit DATE
 );
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX animal_index ON visits (animals_id);
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4;
+CREATE INDEX vet_index ON visits (vets_id);
+CLUSTER visits USING vet_index;
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2;
+CREATE INDEX email_index ON owners (email);
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
