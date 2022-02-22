@@ -1,12 +1,12 @@
 CREATE DATABASE vet_clinic;
 
-CREATE TABLE animals (
-    id int NOT NULL IDENTITY(1,1),
+CREATE TABLE vet_clinic_table (
+    id SERIAL,
     name TEXT,
     date_of_birth DATE,
     escape_attempts INT,
     neutered BOOLEAN,
-    weight_kg DECIMAL,
+    weight_kg DECIMAL
 );
 
 ALTER TABLE animals 
@@ -56,3 +56,5 @@ CREATE TABLE visits(
 	vets_id INT,
     date_of_visit DATE
 );
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
